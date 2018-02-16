@@ -3,4 +3,4 @@ StringTagger es un pequeño modulo escrito en Python, en el cual se implemente e
 
 El clasificador aprende de el texto extraido de paginas webs para luego clasificar el texto que el usuario le proporcione.
 
-"StringTagger" es un proyecto en el cual estoy trabajando y por lo tanto está en proceso. Toda contribusión y aportación sera aceptada con mucho gusto.
+"StringTagger" es un proyecto en el cual estoy trabajando y por lo tanto está en proceso. Toda contribución y aportación sera aceptada con mucho gusto.
