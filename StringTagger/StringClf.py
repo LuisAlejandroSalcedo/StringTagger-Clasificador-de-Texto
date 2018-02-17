@@ -10,7 +10,7 @@ class Classifier(object):
 		self.SamplesTotal = 0		
 		self.vocab = {}
 
-	def train(self,obj,className): # Entrenamos al clasificador
+	def train(self,obj,className): # Metodo para entrenar al clasificador
 		frequents = None
 		if isinstance(obj,str) or isinstance(obj,bytes):
 			frequents = wordFreq(obj)			
@@ -27,7 +27,7 @@ class Classifier(object):
 			vocab = vocab.union(freqMaps.keys())
 		return sorted(vocab)
 			
-	def computeProb(self,obj,className): # Parte logica
+	def computeProb(self,obj,className): # Parte logica, la cual etiquetara al texto
 		words = None
 		if type(obj) in (str,bytes):		
 			words = getWords(obj)
@@ -41,7 +41,7 @@ class Classifier(object):
 			logSum += math.log(prob)
 		return logSum
 	
-	def String(self,obj,verbose=False): # Clasificar cadena de texto
+	def String(self,obj,verbose=False): # El metodo "String" recivira al texto y lo etiquetara
 		probs = {}
 		for className in self.classes:
 			probs[className] = self.computeProb(obj,className)
@@ -50,4 +50,4 @@ class Classifier(object):
 		highest = probs[highestClass]
 		if verbose:
 			print(probs)
-		return highestClass # Clase más alta
+		return highestClass # "String" nos devolvera la etiqueta del texto (Clasificación)
